@@ -1,0 +1,51 @@
+[gd_scene load_steps=9 format=3 uid="uid://bhvdv4mwevqw5"]
+
+[ext_resource type="Texture2D" uid="uid://dd52wimelgqqe" path="res://Resources/Image/Bullet.png" id="1_q0q8t"]
+[ext_resource type="Script" path="res://Assets_main/Bullet.gd" id="1_yeble"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yi07l"]
+size = Vector2(8, 8)
+
+[sub_resource type="Curve" id="Curve_fmorv"]
+_data = [Vector2(0.0133333, 1), 0.0, -1.01351, 0, 1, Vector2(1, 0), -1.01351, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_yr7cc"]
+curve = SubResource("Curve_fmorv")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uk58l"]
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+radial_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+alpha_curve = SubResource("CurveTexture_yr7cc")
+
+[sub_resource type="Gradient" id="Gradient_shymw"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_sijt1"]
+gradient = SubResource("Gradient_shymw")
+width = 2
+height = 2
+use_hdr = true
+
+[node name="Bullet" type="Area2D"]
+collision_mask = 8
+script = ExtResource("1_yeble")
+
+[node name="Image" type="Sprite2D" parent="."]
+texture = ExtResource("1_q0q8t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yi07l")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_uk58l")
+texture = SubResource("GradientTexture2D_sijt1")
+one_shot = true
+explosiveness = 1.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

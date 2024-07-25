@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://0ujn280pb16m"]
+
+[ext_resource type="Script" path="res://Assets_main/Switch.gd" id="1_cosgm"]
+[ext_resource type="Texture2D" uid="uid://nin6byiwqq8t" path="res://Resources/Image/Switch.png" id="2_qk1eb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5x3bc"]
+atlas = ExtResource("2_qk1eb")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr2dl"]
+atlas = ExtResource("2_qk1eb")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w0iau"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5x3bc")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yr2dl")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ldsa4"]
+size = Vector2(8, 8)
+
+[sub_resource type="Curve" id="Curve_7vntr"]
+_data = [Vector2(0.0133333, 1), 0.0, -1.01351, 0, 1, Vector2(1, 0), -1.01351, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_yl8bw"]
+curve = SubResource("Curve_7vntr")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hku7s"]
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+radial_velocity_max = 50.0
+gravity = Vector3(0, 0, 0)
+alpha_curve = SubResource("CurveTexture_yl8bw")
+
+[sub_resource type="Gradient" id="Gradient_rrct7"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_gbl83"]
+gradient = SubResource("Gradient_rrct7")
+width = 2
+height = 2
+use_hdr = true
+
+[node name="Switch" type="Area2D"]
+collision_mask = 8
+script = ExtResource("1_cosgm")
+
+[node name="Image" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_w0iau")
+animation = &"off"
+autoplay = "off"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ldsa4")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_hku7s")
+texture = SubResource("GradientTexture2D_gbl83")
+one_shot = true
+explosiveness = 1.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
