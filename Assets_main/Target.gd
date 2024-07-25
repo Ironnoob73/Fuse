@@ -6,6 +6,7 @@ var breaked : bool = false
 
 func hitted():
 	if breaked == false:
+		get_parent().add_score(20)
 		breaked = true
 		image.hide()
 		particle.set_emitting(true)
