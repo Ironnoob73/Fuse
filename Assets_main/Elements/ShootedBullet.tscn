@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://eomwb176epv0"]
 
-[ext_resource type="Script" path="res://Assets_main/ShootedBullet.gd" id="1_ecgp8"]
+[ext_resource type="Script" path="res://Assets_main/Elements/ShootedBullet.gd" id="1_ecgp8"]
 [ext_resource type="Texture2D" uid="uid://dd52wimelgqqe" path="res://Resources/Image/Bullet.png" id="2_4hdle"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imni6"]

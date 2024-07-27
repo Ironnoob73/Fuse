@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dus53p84kf44p"]
 
-[ext_resource type="Script" path="res://Assets_main/Fuse.gd" id="1_lifr6"]
+[ext_resource type="Script" path="res://Assets_main/Elements/Fuse.gd" id="1_lifr6"]
 [ext_resource type="Texture2D" uid="uid://cylyu0ilhewey" path="res://Resources/Image/Fuse.png" id="2_c3l7u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vvdpq"]

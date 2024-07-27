@@ -1,21 +1,21 @@
 [gd_scene load_steps=26 format=3 uid="uid://ctuhyu8mxoysd"]
 
 [ext_resource type="Texture2D" uid="uid://bu3qsh2fknw2t" path="res://Resources/Image/BackGround0.png" id="1_akpqr"]
-[ext_resource type="Script" path="res://Assets_main/CharacterBody2D.gd" id="1_klx5i"]
+[ext_resource type="Script" path="res://Assets_main/Elements/CharacterBody2D.gd" id="1_klx5i"]
 [ext_resource type="Script" path="res://Assets_main/World.gd" id="1_r7jeu"]
 [ext_resource type="FontFile" uid="uid://bu28sqx07tc6r" path="res://Resources/QuanPixel.ttf" id="2_0u4ro"]
 [ext_resource type="TileSet" uid="uid://3uroax7qg1k0" path="res://Resources/Tilemap0.tres" id="2_nonfo"]
 [ext_resource type="Texture2D" uid="uid://c5f5val2fsbl1" path="res://Resources/Image/Tutorial.png" id="2_oqvlc"]
 [ext_resource type="Texture2D" uid="uid://dd52wimelgqqe" path="res://Resources/Image/Bullet.png" id="2_u1wb1"]
-[ext_resource type="Script" path="res://Assets_main/Hud.gd" id="2_v57m2"]
+[ext_resource type="Script" path="res://Assets_main/Elements/Hud.gd" id="2_v57m2"]
 [ext_resource type="Texture2D" uid="uid://dr07674y4hyqu" path="res://Resources/Image/Character.png" id="3_gcuvr"]
 [ext_resource type="Texture2D" uid="uid://bn15fg1muq27c" path="res://Resources/Image/Life.png" id="4_o082w"]
-[ext_resource type="PackedScene" uid="uid://0ujn280pb16m" path="res://Assets_main/Switch.tscn" id="5_4euqb"]
+[ext_resource type="PackedScene" uid="uid://0ujn280pb16m" path="res://Assets_main/Elements/Switch.tscn" id="5_4euqb"]
 [ext_resource type="Texture2D" uid="uid://cylyu0ilhewey" path="res://Resources/Image/Fuse.png" id="5_6r8xu"]
-[ext_resource type="PackedScene" uid="uid://dus53p84kf44p" path="res://Assets_main/Fuse.tscn" id="6_keru6"]
-[ext_resource type="PackedScene" uid="uid://61422uhhr5pk" path="res://Assets_main/Target.tscn" id="9_528xr"]
-[ext_resource type="PackedScene" uid="uid://bhvdv4mwevqw5" path="res://Assets_main/Bullet.tscn" id="12_nl2c7"]
-[ext_resource type="PackedScene" uid="uid://b0huxamirlvtf" path="res://Assets_main/Exit.tscn" id="13_bt4hq"]
+[ext_resource type="PackedScene" uid="uid://dus53p84kf44p" path="res://Assets_main/Elements/Fuse.tscn" id="6_keru6"]
+[ext_resource type="PackedScene" uid="uid://61422uhhr5pk" path="res://Assets_main/Elements/Target.tscn" id="9_528xr"]
+[ext_resource type="PackedScene" uid="uid://bhvdv4mwevqw5" path="res://Assets_main/Elements/Bullet.tscn" id="12_nl2c7"]
+[ext_resource type="PackedScene" uid="uid://b0huxamirlvtf" path="res://Assets_main/Elements/Exit.tscn" id="13_bt4hq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_43quk"]
 size = Vector2(8, 8)
@@ -47,12 +47,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_kvxms"]
+[sub_resource type="Gradient" id="Gradient_m7uyp"]
 offsets = PackedFloat32Array(0.25, 0.75)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_fdc85"]
-gradient = SubResource("Gradient_kvxms")
+gradient = SubResource("Gradient_m7uyp")
 width = 50
 height = 50
 fill = 1

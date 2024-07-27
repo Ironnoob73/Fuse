@@ -4,7 +4,7 @@ extends Area2D
 @onready var image = $Image
 var getted : bool = false
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	if getted == false:
 		get_parent().add_score(5)
 		get_parent().add_bullet(1)

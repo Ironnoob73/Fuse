@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://0ujn280pb16m"]
 
-[ext_resource type="Script" path="res://Assets_main/Switch.gd" id="1_cosgm"]
+[ext_resource type="Script" path="res://Assets_main/Elements/Switch.gd" id="1_cosgm"]
 [ext_resource type="Texture2D" uid="uid://nin6byiwqq8t" path="res://Resources/Image/Switch.png" id="2_qk1eb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5x3bc"]
