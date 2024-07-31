@@ -292,3 +292,5 @@ position = Vector2(132, 68)
 
 [node name="Bullet" parent="." instance=ExtResource("12_nl2c7")]
 position = Vector2(36, 68)
+
+[connection signal="time_out" from="CanvasLayer" to="." method="_on_canvas_layer_time_out"]

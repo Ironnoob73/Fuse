@@ -45,7 +45,12 @@ func add_score(added_score:int):
 
 func exit():
 	canvas_layer.flow = false
+	add_score(floor(canvas_layer.last_time * 10))
 	var tween = get_tree().create_tween().set_parallel()
 	tween.tween_property(env_light,"energy",1,0.25)
 	tween.tween_property(player_light,"energy",1,0.25)
 	tween.tween_property(player_light,"texture_scale",0,0.5).set_trans(Tween.TRANS_CUBIC)
+	tween.tween_callback(func():get_tree().change_scene_to_file("res://Assets_main/Title.tscn")).set_delay(0.5)
+
+func _on_canvas_layer_time_out():
+	canvas_layer.add_health(true)

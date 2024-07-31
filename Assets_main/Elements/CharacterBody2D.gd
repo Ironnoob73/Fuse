@@ -8,6 +8,8 @@ const JUMP_VELOCITY = -250.0
 @onready var point_light_2d = $PointLight2D
 @onready var ray_cast_2d = $RayCast2D
 
+var bullet = preload("res://Assets_main/Elements/ShootedBullet.tscn")
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -54,7 +56,7 @@ func _physics_process(delta):
 		ray_cast_2d.get_collider().hitted()
 	if Input.is_action_just_pressed("range") && get_parent().bullet_count > 0:
 		get_parent().add_bullet(-1)
-		var bullet_instance = load("res://Assets_main/ShootedBullet.tscn").instantiate()
+		var bullet_instance = bullet.instantiate()
 		bullet_instance.direction = sprite_2d.flip_h
 		bullet_instance.position = position
 		get_parent().add_child(bullet_instance)

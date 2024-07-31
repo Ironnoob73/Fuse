@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://difuj4hbx4b03"]
+
+[ext_resource type="FontFile" uid="uid://bu28sqx07tc6r" path="res://Resources/QuanPixel.ttf" id="1_8icq4"]
+
+[resource]
+Label/font_sizes/font_size = 8
+Label/fonts/font = ExtResource("1_8icq4")
+TooltipLabel/font_sizes/font_size = 8
+TooltipLabel/fonts/font = ExtResource("1_8icq4")

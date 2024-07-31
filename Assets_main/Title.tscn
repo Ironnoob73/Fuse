@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dloq7orwq4ry7"]
+[gd_scene load_steps=7 format=3 uid="uid://dloq7orwq4ry7"]
 
+[ext_resource type="Theme" uid="uid://difuj4hbx4b03" path="res://Resources/Title_theme.tres" id="1_gkal5"]
 [ext_resource type="Script" path="res://Assets_main/Title.gd" id="1_qcvkd"]
 [ext_resource type="FontFile" uid="uid://bu28sqx07tc6r" path="res://Resources/QuanPixel.ttf" id="2_lli0p"]
 
@@ -15,6 +16,8 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 1)
 
+[sub_resource type="SystemFont" id="SystemFont_an45g"]
+
 [node name="Title" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -22,6 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_gkal5")
 script = ExtResource("1_qcvkd")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
@@ -43,6 +47,7 @@ offset_left = -30.0
 offset_right = 30.0
 offset_bottom = 35.0
 grow_horizontal = 2
+theme_override_fonts/font = SubResource("SystemFont_an45g")
 theme_override_font_sizes/font_size = 25
 text = "FUSE"
 
@@ -77,6 +82,16 @@ grow_vertical = 2
 tooltip_text = "TUTORIAL"
 theme_override_fonts/font = ExtResource("2_lli0p")
 text = "📖"
+
+[node name="Label" type="Label" parent="Tutorial"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.5
+anchor_top = 1.0
+anchor_bottom = 1.0
+text = "LAST:
+00000000
+00:00.00"
 
 [node name="Settings" type="Button" parent="."]
 layout_mode = 1
